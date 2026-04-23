@@ -24,3 +24,7 @@ data/final/
 # Secrets
 config_secret.py
 .env.local
+
+#Temp files
+*.tmp
+*.temp
