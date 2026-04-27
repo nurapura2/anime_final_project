@@ -2,7 +2,7 @@ import pandas as pd
 import re
 import sqlite3
 
-conn = sqlite3.connect(':memory:')
+conn = sqlite3.connect('database//anime.db')
 cursor = conn.cursor()
 
 def to_int(val):
