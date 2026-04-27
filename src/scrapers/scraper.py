@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import time
+
 import random
 import re
 import pandas as pd
@@ -8,7 +9,7 @@ import pandas as pd
 
 BASE_URL    = "https://old.yummyani.me"
 CATALOG_URL = "https://old.yummyani.me/catalog"
-MAX_PAGES   = 1   # None = all pages, number = limit
+MAX_PAGES   = None   # None = all pages, number = limit
 
 headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
