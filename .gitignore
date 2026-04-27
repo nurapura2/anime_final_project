@@ -28,3 +28,6 @@ config_secret.py
 #Temp files
 *.tmp
 *.temp
+
+#csv checkpoints
+*.csv
