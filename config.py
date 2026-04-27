@@ -3,7 +3,7 @@ BASE_URL = "https://www.hltv.org/"
 
 # Category pages to scrape
 CATEGORY_MAP = {
-    "players": "https://www.hltv.org/players",
+    "players": "https://www.hltv.org/players?offset=0",
     "player_stats": "https://www.hltv.org/stats?csVersion=CS2",
     "maps": "https://www.hltv.org/stats/maps",
     "teams": "https://www.hltv.org/stats/teams?startDate=all",
