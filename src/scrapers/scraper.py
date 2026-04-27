@@ -288,7 +288,7 @@ for i, link in enumerate(anime_links, 1):
 
 if all_anime:
     df = pd.DataFrame(all_anime)
-    df.to_csv("anime_catalog.csv", index=False, encoding="utf-8-sig")
+    df.to_csv("data//raw//anime_catalog.csv", index=False, encoding="utf-8-sig")
     print("Saved: anime_catalog.csv")
 
 print(f"Total anime scraped: {len(all_anime)}")
