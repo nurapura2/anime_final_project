@@ -14,9 +14,9 @@ venv/
 .idea/
 
 # Data
-#data/raw/
-#data/processed/
-#data/final/
+data/raw/
+data/processed/
+data/final/
 
 # Logs
 *.log
