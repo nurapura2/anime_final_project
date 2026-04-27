@@ -104,7 +104,7 @@ def run():
         if i % 100 == 0:
             time.sleep(random.uniform(10, 20))
             checkpoint_df = pd.DataFrame(all_anime)
-            checkpoint_df.to_csv(f"anime_checkpoint_{i}.csv", index=False, encoding="utf-8-sig")
+            checkpoint_df.to_csv(f"data//raw//anime_checkpoint_{i}.csv", index=False, encoding="utf-8-sig")
             print(f"[Checkpoint] Saved {i} anime entries")
 
         time.sleep(random.uniform(1, 2.5))
@@ -294,3 +294,6 @@ def run():
         print("Saved: anime_catalog.csv")
 
     print(f"Total anime scraped: {len(all_anime)}")
+
+if __name__ == "__main__":
+    run()
