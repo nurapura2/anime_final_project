@@ -1,0 +1,7 @@
+#requirements
+requests
+BeautifulSoup
+time
+random
+re
+pandas
