@@ -14,7 +14,7 @@ venv/
 .idea/
 
 # Data
-data/raw/
+#data/raw/
 data/processed/
 data/final/
 
