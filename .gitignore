@@ -30,4 +30,4 @@ config_secret.py
 *.temp
 
 #csv checkpoints
-#*.csv
+*.csv
