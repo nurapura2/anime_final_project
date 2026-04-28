@@ -15,8 +15,8 @@ venv/
 
 # Data
 #data/raw/
-data/processed/
-data/final/
+#data/processed/
+#data/final/
 
 # Logs
 *.log
@@ -30,4 +30,4 @@ config_secret.py
 *.temp
 
 #csv checkpoints
-*.csv
+#*.csv
