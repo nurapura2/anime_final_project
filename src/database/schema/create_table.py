@@ -4,7 +4,7 @@ import sqlite3
 # 2. DATABASE SETUP (SQLite in-memory)
 # ==========================================
 def create_db():
-   conn = sqlite3.connect(':memory:')
+   conn = sqlite3.connect('database\\db\\anime_catalog.db')
    cursor = conn.cursor()
 
 # Creating tables according to relational schema (Many-to-Many logic)
