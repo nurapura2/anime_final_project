@@ -5,3 +5,5 @@ time
 random
 re
 pandas
+numpy
+sqlite3
