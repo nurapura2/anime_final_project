@@ -1,15 +1,10 @@
-# Base website URL
-BASE_URL = "https://www.hltv.org/"
+import random
+import time
 
-# Category pages to scrape
-CATEGORY_MAP = {
-    "players": "https://www.hltv.org/players?offset=0",
-    "player_stats": "https://www.hltv.org/stats?csVersion=CS2",
-    "maps": "https://www.hltv.org/stats/maps",
-    "teams": "https://www.hltv.org/stats/teams?startDate=all",
-    "matches": "https://www.hltv.org/stats/matches?startDate=all",
-    "tournaments": "https://www.hltv.org/stats/events?startDate=all"
-}
+# Base website URL
+BASE_URL = "https://old.yummyani.me"
+CATALOG_URL = "https://old.yummyani.me/catalog"
+
 # Headers to avoid blocking by the website
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
@@ -17,11 +12,14 @@ HEADERS = {
     "Chrome/124.0.0.0 Safari/537.36",
     "Accept-Language": "ru-RU,ru;q=0.9,en;q=0.8",
 }
+
 # Timeout for requests
 TIMEOUT = 10
 
 # Delay between requests 
-DELAY = 3
+DELAY      = (1.0, 2.5)   # between requests
+DELAY_LONG = (10.0, 20.0) # at checkpoints
+DELAY_ERR  = (5.0, 15.0)  # on 429/503
 
 # Maximum number of pages to scrape per category
 MAX_PAGES = 50

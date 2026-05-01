@@ -1,58 +1,83 @@
+import sys
+import os
+sys.path.append(os.path.join(os.path.dirname(__file__), "..", ".."))
+import config
+
 import requests
 from bs4 import BeautifulSoup
 import time
-
 import random
 import re
 import pandas as pd
 
 
-BASE_URL    = "https://old.yummyani.me"
-CATALOG_URL = "https://old.yummyani.me/catalog"
-MAX_PAGES   = None   # None = all pages, number = limit
+# ── Session setup ─────────────────────────────────────────────────────────────
 
-headers = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-                  "AppleWebKit/537.36 (KHTML, like Gecko) "
-                  "Chrome/124.0.0.0 Safari/537.36",
-    "Accept-Language": "ru-RU,ru;q=0.9,en;q=0.8",
-}
+base_url    = config.BASE_URL
+catalog_url = config.CATALOG_URL
+max_pages   = config.MAX_PAGES  # None = all pages, integer = limit
+
 session = requests.Session()
-session.headers.update(headers)
+session.headers.update(config.HEADERS)
+
+
+# ── Helpers ───────────────────────────────────────────────────────────────────
+
+def _sleep(delay_range):
+    """Sleep for a random duration within the given (min, max) range."""
+    time.sleep(random.uniform(*delay_range))
 
 
 def fetch(url, retries=3):
+    """
+    Fetch a URL with retry logic.
+    Backs off on 429/503 errors and request exceptions.
+    Returns a Response object or None on failure.
+    """
     for attempt in range(retries):
         try:
-            response = session.get(url, timeout=15)
+            response = session.get(url, timeout=config.TIMEOUT)
 
             if response.status_code in (429, 503):
-                time.sleep(random.uniform(5, 15) * (attempt + 1))
-                print(f"Error {response.status_code}, waiting...")
+                # Exponential-style back-off on rate limit / service unavailable
+                _sleep((
+                    config.DELAY_ERR[0] * (attempt + 1),
+                    config.DELAY_ERR[1] * (attempt + 1),
+                ))
+                print(f"[fetch] HTTP {response.status_code} — retrying ({attempt + 1}/{retries})")
                 continue
 
             if response.status_code != 200:
+                print(f"[fetch] Unexpected status {response.status_code} for {url}")
                 return None
 
             return response
 
-        except requests.RequestException:
-            time.sleep(random.uniform(5, 15) * (attempt + 1))
+        except requests.RequestException as e:
+            print(f"[fetch] Request error: {e} — retrying ({attempt + 1}/{retries})")
+            _sleep((
+                config.DELAY_ERR[0] * (attempt + 1),
+                config.DELAY_ERR[1] * (attempt + 1),
+            ))
 
+    print(f"[fetch] All retries exhausted for {url}")
     return None
 
 
-def run():
-    # ── 1. Get total number of pages ─────────────────────────────────────
+# ── Main scraper ──────────────────────────────────────────────────────────────
 
-    response = fetch(CATALOG_URL)
+def run():
+
+    # ── 1. Determine total number of catalog pages ────────────────────────────
+
+    response = fetch(catalog_url)
     if not response:
-        print("Failed to load catalog")
+        print("[run] Failed to load catalog — aborting")
         return
 
     soup = BeautifulSoup(response.text, "html.parser")
 
-    last_page = 1
+    last_page  = 1
     pagination = soup.find("ul", class_="pagination")
     if pagination:
         for a in pagination.find_all("a"):
@@ -60,27 +85,29 @@ def run():
             if txt.isdigit():
                 last_page = max(last_page, int(txt))
 
-    if MAX_PAGES:
-        last_page = min(last_page, MAX_PAGES)
+    if max_pages:
+        last_page = min(last_page, max_pages)
 
-    print(f"Total pages: {last_page}")
+    print(f"[run] Total pages to scrape: {last_page}")
 
 
-    # ── 2. Collect links to all anime from catalog ───────────────────────
+    # ── 2. Collect anime links from all catalog pages ─────────────────────────
 
     anime_links = []
 
     for page_num in range(1, last_page + 1):
+
         if page_num == 1:
+            # Reuse already-fetched first page
             page_soup = soup
         else:
-            url = f"{CATALOG_URL}?page={page_num}"
-            print(f"Catalog page {page_num}/{last_page}: {url}")
+            url = f"{catalog_url}?page={page_num}"
+            print(f"[catalog] Page {page_num}/{last_page}: {url}")
             response = fetch(url)
             if not response:
                 continue
             page_soup = BeautifulSoup(response.text, "html.parser")
-            time.sleep(random.uniform(1, 2.5))
+            _sleep(config.DELAY)  # polite delay between catalog pages
 
         for block in page_soup.find_all("div", class_="anime-column-info"):
             a_tag = block.find("a", class_="anime-title")
@@ -88,26 +115,31 @@ def run():
                 continue
             href = a_tag.get("href", "")
             if href:
-                anime_links.append(BASE_URL + href)
+                anime_links.append(base_url + href)
 
-    anime_links = list(set(anime_links))
-    print(f"Anime found: {len(anime_links)}")
+    # Remove duplicates while preserving order
+    anime_links = list(dict.fromkeys(anime_links))
+    print(f"[run] Unique anime found: {len(anime_links)}")
 
 
-    # ── 3. Parse each anime page ─────────────────────────────────────────
+    # ── 3. Scrape each anime detail page ──────────────────────────────────────
 
     all_anime = []
 
     for i, link in enumerate(anime_links, 1):
 
-        # Checkpoint: save progress every 100 entries
+        # Checkpoint: save progress every 100 entries and take a longer break
         if i % 100 == 0:
-            time.sleep(random.uniform(10, 20))
+            _sleep(config.DELAY_LONG)
             checkpoint_df = pd.DataFrame(all_anime)
-            checkpoint_df.to_csv(f"data//raw//anime_checkpoint_{i}.csv", index=False, encoding="utf-8-sig")
-            print(f"[Checkpoint] Saved {i} anime entries")
+            checkpoint_df.to_csv(
+                f"data/raw/anime_checkpoint_{i}.csv",
+                index=False,
+                encoding="utf-8-sig",
+            )
+            print(f"[checkpoint] Saved {i} entries")
 
-        time.sleep(random.uniform(1, 2.5))
+        _sleep(config.DELAY)  # polite delay between anime pages
 
         response = fetch(link)
         if not response:
@@ -115,12 +147,12 @@ def run():
 
         soup = BeautifulSoup(response.text, "html.parser")
 
-        # Title
+        # ── Title ─────────────────────────────────────────────────────────────
         titles_div = soup.find("div", class_="titles")
-        h1 = titles_div.find("h1", itemprop="name") if titles_div else None
-        title_ru = h1.get_text(strip=True) if h1 else "N/A"
+        h1         = titles_div.find("h1", itemprop="name") if titles_div else None
+        title_ru   = h1.get_text(strip=True) if h1 else "N/A"
 
-        # Alternative titles
+        # ── Alternative titles ────────────────────────────────────────────────
         alt_names = []
         alt_block = soup.find("ul", class_="alt-names-list")
         if alt_block:
@@ -131,24 +163,25 @@ def run():
                     if t and t != "…":
                         alt_names.append(t)
 
-        # Site rating
+        # ── Site rating ───────────────────────────────────────────────────────
         anime_id    = "N/A"
         site_rating = "N/A"
         site_votes  = "N/A"
         site_views  = "N/A"
+
         rating_block = soup.find("div", class_="rating-info")
         if rating_block:
-            anime_id    = rating_block.get("data-id", "N/A")
-            main_r      = rating_block.find("span", class_="main-rating")
-            site_rating = main_r.get_text(strip=True) if main_r else "N/A"
-            rating_info = rating_block.find("span", class_="main-rating-info")
-            votes_span  = rating_info.find("span") if rating_info else None
-            site_votes  = votes_span.get_text(strip=True) if votes_span else "N/A"
+            anime_id     = rating_block.get("data-id", "N/A")
+            main_r       = rating_block.find("span", class_="main-rating")
+            site_rating  = main_r.get_text(strip=True) if main_r else "N/A"
+            rating_info  = rating_block.find("span", class_="main-rating-info")
+            votes_span   = rating_info.find("span") if rating_info else None
+            site_votes   = votes_span.get_text(strip=True) if votes_span else "N/A"
             viewers_span = rating_block.find("span", class_="viewers-info")
             if viewers_span:
                 site_views = re.sub(r"\s+", " ", viewers_span.get_text(strip=True))
 
-        # Characteristics
+        # ── Characteristics ───────────────────────────────────────────────────
         status     = "N/A"
         anime_type = "N/A"
         year       = "N/A"
@@ -206,7 +239,7 @@ def run():
                     if voices_ul:
                         dubbing = [a.get_text(strip=True) for a in voices_ul.find_all("a")]
 
-        # External ratings
+        # ── External ratings ──────────────────────────────────────────────────
         shikimori_rating = "N/A"
         shikimori_url    = "N/A"
         worldart_rating  = "N/A"
@@ -237,9 +270,10 @@ def run():
                     mal_rating       = rating
                     mal_url          = href
 
-        # Comments / reviews
+        # ── Comments / reviews ────────────────────────────────────────────────
         comments_count = "N/A"
         reviews_count  = "N/A"
+
         tabs_ul = soup.find("ul", class_="tabs")
         if tabs_ul:
             for tab_li in tabs_ul.find_all("li", class_="tabs-li"):
@@ -286,14 +320,15 @@ def run():
         })
 
 
-    # ── 4. Save final CSV with pandas ────────────────────────────────────
+    # ── 4. Save final CSV ─────────────────────────────────────────────────────
 
     if all_anime:
         df = pd.DataFrame(all_anime)
-        df.to_csv("data//raw//anime_catalog.csv", index=False, encoding="utf-8-sig")
-        print("Saved: anime_catalog.csv")
+        df.to_csv("data/raw/anime_catalog.csv", index=False, encoding="utf-8-sig")
+        print("[run] Saved: data/raw/anime_catalog.csv")
 
-    print(f"Total anime scraped: {len(all_anime)}")
+    print(f"[run] Total anime scraped: {len(all_anime)}")
+
 
 if __name__ == "__main__":
     run()
