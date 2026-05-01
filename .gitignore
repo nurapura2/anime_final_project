@@ -24,6 +24,7 @@ data/final/
 # Secrets
 config_secret.py
 .env.local
+*.json
 
 #Temp files
 *.tmp

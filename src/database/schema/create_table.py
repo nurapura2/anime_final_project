@@ -5,7 +5,6 @@ import os
 # DATABASE SETUP (SQLite)
 # ==========================================
 def create_db():
-    # Создаём папку, если её нет
     os.makedirs('database/db', exist_ok=True)
 
     conn = sqlite3.connect('database/db/anime_catalog.db')
