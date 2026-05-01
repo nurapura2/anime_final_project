@@ -2,9 +2,8 @@ import pandas as pd
 import sqlite3
 import re
 
-conn = sqlite3.connect(':memory:')
+conn = sqlite3.connect('database/db/anime_catalog.db')
 cursor = conn.cursor()
-
 
 def run_query(title, description, sql):
     print(f"--- Query: {title} ---")
