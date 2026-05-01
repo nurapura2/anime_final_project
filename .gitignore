@@ -13,6 +13,11 @@ venv/
 .vscode/
 .idea/
 
+# Data
+data/raw/
+data/processed/
+data/final/
+
 # Logs
 *.log
 
@@ -24,3 +29,6 @@ config_secret.py
 #Temp files
 *.tmp
 *.temp
+
+#csv checkpoints
+*.csv
