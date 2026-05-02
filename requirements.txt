@@ -1,9 +1,5 @@
 #requirements
-requests
-BeautifulSoup
-time
-random
-re
-pandas
-numpy
-sqlite3
+requests 
+beautifulsoup4 
+pandas 
+numpy 
