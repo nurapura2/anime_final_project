@@ -33,8 +33,8 @@ The goal is to analyze trends in the anime industry — popularity by genre, rel
 
 
 ### Database Schema
-<!-- TODO: Add ER diagram or DB browser screenshot -->
-> *Screenshot coming soon*
+<img width="2347" height="1291" alt="image" src="https://github.com/user-attachments/assets/c3449b3d-124c-4ce3-b756-1e6d194fcdaa" />
+
 
 ### Google Sheets Export
 <img width="2524" height="1143" alt="image" src="https://github.com/user-attachments/assets/6a401b19-39e2-45fd-9742-b7aa323ba9a3" />
