@@ -34,12 +34,11 @@ The goal is to analyze trends in the anime industry — popularity by genre, rel
 > *Screenshot coming soon*
 
 ### Google Sheets Export
-<!-- TODO: Add screenshot of the populated Google Sheet -->
+<img width="2524" height="1143" alt="image" src="https://github.com/user-attachments/assets/6a401b19-39e2-45fd-9742-b7aa323ba9a3" />
 > *Screenshot coming soon*
 
 ### Looker Studio Dashboard
-<<img width="2524" height="1143" alt="image" src="https://github.com/user-attachments/assets/6a401b19-39e2-45fd-9742-b7aa323ba9a3" />
->
+
 > *Screenshot coming soon*
 
 ---
