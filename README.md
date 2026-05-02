@@ -26,8 +26,9 @@ The goal is to analyze trends in the anime industry — popularity by genre, rel
 ## 📸 Screenshots
 
 ### Web Scraping in Action
-<img width="896" height="808" alt="image" src="https://github.com/user-attachments/assets/ad5d7e56-7b85-4c17-9967-56e61db0d182" />
+<img width="932" height="816" alt="image" src="https://github.com/user-attachments/assets/53e87ed2-5840-48a3-a621-41330c444b41" />
 
+<img width="445" height="155" alt="image" src="https://github.com/user-attachments/assets/7bb61e9d-a1b3-449c-afad-07ddf7edf395" />
 
 
 
