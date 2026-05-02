@@ -84,7 +84,7 @@ We collected a dataset of **10,142 records** containing the following attributes
 - Extracts raw HTML using `requests`, parsed with `BeautifulSoup4`
 - Handles pagination across all catalog pages
 - Error handling for missing fields, timeouts, and failed requests
-- Collects 10,142 records across 14 attributes
+- Collects 10,142 records across 26 attributes
 - Output → `data/raw/anime_catalog.csv`
 
 ### 2. 🧹 Data Preprocessing — `src/etl/transform.py`
