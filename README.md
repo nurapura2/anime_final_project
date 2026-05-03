@@ -45,7 +45,7 @@ The goal is to analyze trends in the anime industry — popularity by genre, rel
 
 
 ### Google Sheets Export
-<img width="2559" height="1262" alt="image" src="https://github.com/user-attachments/assets/d6dadeeb-c836-486d-a597-cbacb673987c" />
+<img width="2547" height="1223" alt="image" src="https://github.com/user-attachments/assets/e079d838-764c-43b7-893f-13248151c32f" />
 
 ### Looker Studio Dashboard
 
@@ -64,7 +64,7 @@ We collected a dataset of **10,142 records** containing the following attributes
 | `anime_type` | Release format | TV Series, Movie, OVA, ONA |
 | `status` | Current release status | Released, Ongoing, Announced |
 | `release_year` | Year of broadcast | 2003 |
-| `age_rating` | Recommended audience age | 16+, 18+, PG |
+| `age_rating` | Recommended audience age | R-17+, G, PG |
 | `source` | Source material | Manga, Light Novel, Original |
 | `site_rating` | User score on the platform | 8.4 |
 | `site_votes` | Number of user votes | 12400 |
@@ -94,7 +94,7 @@ We collected a dataset of **10,142 records** containing the following attributes
 - Extracts raw HTML using `requests`, parsed with `BeautifulSoup4`
 - Handles pagination across all catalog pages
 - Error handling for missing fields, timeouts, and failed requests
-- Collects 10,142 records across 26 attributes
+- Collects 10,159 records across 26 attributes
 - Output → `data/raw/anime_catalog.csv`
 
 ### 2. 🧹 Data Preprocessing — `src/etl/transform.py`
