@@ -28,7 +28,6 @@ The goal is to analyze trends in the anime industry — popularity by genre, rel
 <a href="#technology_stack"><kbd> <br> Technology Stack <br> </kbd></a>&ensp;&ensp;
 <a href="#pipeline_stages"><kbd> <br> Pipeline Stages <br> </kbd></a>&ensp;&ensp;
 <a href="#project_structure"><kbd> <br> Project Structure <br> </kbd></a>&ensp;&ensp;
-<a href="#installation_setup"><kbd> <br> Installation <br> </kbd></a>
 
 <br>
 
@@ -322,7 +321,7 @@ LIMIT 10;
 ├── documentation/
 │   │
 │   ├── cleaning_passport.pdf   # Before/after preprocessing log
-│   └── schema_diagram.png      # ER diagram
+│   └── documentation.docx      # Documentation
 │
 ├── notebooks/                  # Jupyter notebooks for EDA and testing
 │
@@ -352,14 +351,6 @@ LIMIT 10;
 
 ---
 
-## <a name="installation_setup"></a>  ⚙️ Installation & Setup
-
-<br>
-<a href="#project_overview"><kbd> <br> Project Overview <br> </kbd></a>&ensp;&ensp;
-<br>
-
-
-```
 
 ---
 
