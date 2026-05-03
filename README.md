@@ -304,7 +304,7 @@ LIMIT 10;
 - Cleaned data exported to **Google Sheets** via Google Sheets API
 - **[📊 Google Sheets - Dataset](https://docs.google.com/spreadsheets/d/1wE2jzDtm50-0H0qlcDM1NiB9CExufcMk3x1ylPXYleY/edit?usp=sharing)**
 - Interactive dashboard built in **Looker Studio** with bar charts, line charts, pie charts, and filter controls
-- **[📈 Looker Studio Dashboard](#)** *(link coming soon)*
+- **[📈 Looker Studio Dashboard](https://datastudio.google.com/u/0/reporting/9eedbaa6-5b50-4560-8ad7-70e6e923317d/page/tnxwF)**
 
 ---
 
