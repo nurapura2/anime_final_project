@@ -15,8 +15,6 @@ An End-to-End Data Pipeline to scrape, clean, store, analyze, and visualize anim
 
 </div>
 
----
-
 ## 📌 Project Overview
 
 This repository contains the final project for the Data Analysis course. Our team built an End-to-End Data Pipeline to scrape, clean, store, analyze, and visualize anime data from [yummyani.me](https://yummyani.me).
@@ -26,11 +24,11 @@ The goal is to analyze trends in the anime industry — popularity by genre, rel
 <br>
 
 <a href="#screenshots"><kbd> <br> Screenshots <br> </kbd></a>&ensp;&ensp;
-<a href="#-data-dictionary"><kbd> <br> Data Dictionary <br> </kbd></a>&ensp;&ensp;
-<a href="#-technology-stack"><kbd> <br> Technology Stack <br> </kbd></a>&ensp;&ensp;
-<a href="#-pipeline-stages"><kbd> <br> Pipeline Stages <br> </kbd></a>&ensp;&ensp;
-<a href="#-project-structure"><kbd> <br> Project Structure <br> </kbd></a>&ensp;&ensp;
-<a href="#-installation--setup"><kbd> <br> Installation <br> </kbd></a>
+<a href="#data_dictionary"><kbd> <br> Data Dictionary <br> </kbd></a>&ensp;&ensp;
+<a href="#technology_stack"><kbd> <br> Technology Stack <br> </kbd></a>&ensp;&ensp;
+<a href="#pipeline_stages"><kbd> <br> Pipeline Stages <br> </kbd></a>&ensp;&ensp;
+<a href="#project_structure"><kbd> <br> Project Structure <br> </kbd></a>&ensp;&ensp;
+<a href="#installation_setup"><kbd> <br> Installation <br> </kbd></a>
 
 <br>
 ---
@@ -70,7 +68,7 @@ The goal is to analyze trends in the anime industry — popularity by genre, rel
 
 ---
 
-## 🗂️ Data Dictionary
+## <a name="data_dictionary"></a>  🗂️ Data Dictionary
 
 We collected a dataset of **10,159 records** containing the following attributes:
 
@@ -93,7 +91,7 @@ We collected a dataset of **10,159 records** containing the following attributes
 
 ---
 
-## 🛠️ Technology Stack
+## <a name="technology_stack"></a>  🛠️ Technology Stack
 
 | Layer | Tools |
 |---|---|
@@ -104,7 +102,7 @@ We collected a dataset of **10,159 records** containing the following attributes
 
 ---
 
-## 🚀 Pipeline Stages
+## <a name="pipeline_stages"></a>  🚀 Pipeline Stages
 
 ### 1. 🕷️ Web Scraping — `src/etl/extract.py`
 
@@ -285,7 +283,7 @@ LIMIT 10;
 
 ---
 
-## 📂 Project Structure
+## <a name="project_structure"></a>  📂 Project Structure
 
 ```text
 .
@@ -326,7 +324,7 @@ LIMIT 10;
 
 ---
 
-## ⚙️ Installation & Setup
+## <a name="installation_setup"></a>  ⚙️ Installation & Setup
 
 
 ```
