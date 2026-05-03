@@ -31,6 +31,7 @@ The goal is to analyze trends in the anime industry — popularity by genre, rel
 <a href="#installation_setup"><kbd> <br> Installation <br> </kbd></a>
 
 <br>
+
 ---
 
 ## <a name="screenshots"></a> 📸 Screenshots
@@ -38,6 +39,7 @@ The goal is to analyze trends in the anime industry — popularity by genre, rel
 <br>
 <a href="#project_overview"><kbd> <br> Project Overview <br> </kbd></a>&ensp;&ensp;
 <br>
+
 #### Site
 <img width="2530" height="1323" alt="image" src="https://github.com/user-attachments/assets/ac3729b7-9f01-47be-9510-537ee46a938a" />
 #### Catalog
@@ -73,6 +75,7 @@ The goal is to analyze trends in the anime industry — popularity by genre, rel
 ---
 
 ## <a name="data_dictionary"></a>  🗂️ Data Dictionary
+
 <br>
 <a href="#project_overview"><kbd> <br> Project Overview <br> </kbd></a>&ensp;&ensp;
 <br>
@@ -101,9 +104,11 @@ We collected a dataset of **10,159 records** containing the following attributes
 ---
 
 ## <a name="technology_stack"></a>  🛠️ Technology Stack
+
 <br>
 <a href="#project_overview"><kbd> <br> Project Overview <br> </kbd></a>&ensp;&ensp;
 <br>
+
 | Layer | Tools |
 |---|---|
 | Web Scraping | `Python`, `requests`, `BeautifulSoup4` |
@@ -114,6 +119,7 @@ We collected a dataset of **10,159 records** containing the following attributes
 ---
 
 ## <a name="pipeline_stages"></a>  🚀 Pipeline Stages
+
 <br>
 <a href="#project_overview"><kbd> <br> Project Overview <br> </kbd></a>&ensp;&ensp;
 <br>
@@ -342,6 +348,7 @@ LIMIT 10;
 ---
 
 ## <a name="installation_setup"></a>  ⚙️ Installation & Setup
+
 <br>
 <a href="#project_overview"><kbd> <br> Project Overview <br> </kbd></a>&ensp;&ensp;
 <br>
