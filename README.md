@@ -25,9 +25,11 @@ The goal is to analyze trends in the anime industry — popularity by genre, rel
 
 <br>
 
-<a href="#-project-overview"><kbd> <br> Project Overview <br> </kbd></a>&ensp;&ensp;
-<a href="#-technology-stack"><kbd> <br> Tech Stack <br> </kbd></a>&ensp;&ensp;
+<a href="#-screenshots"><kbd> <br> Screenshots <br> </kbd></a>&ensp;&ensp;
+<a href="#-data-dictionary"><kbd> <br> Data Dictionary <br> </kbd></a>&ensp;&ensp;
+<a href="#-technology-stack"><kbd> <br> Technology Stack <br> </kbd></a>&ensp;&ensp;
 <a href="#-pipeline-stages"><kbd> <br> Pipeline Stages <br> </kbd></a>&ensp;&ensp;
+<a href="#-project-structure"><kbd> <br> Project Structure <br> </kbd></a>&ensp;&ensp;
 <a href="#-installation--setup"><kbd> <br> Installation <br> </kbd></a>
 
 <br>
@@ -70,7 +72,7 @@ The goal is to analyze trends in the anime industry — popularity by genre, rel
 
 ## 🗂️ Data Dictionary
 
-We collected a dataset of **10,142 records** containing the following attributes:
+We collected a dataset of **10,159 records** containing the following attributes:
 
 | Column | Description | Example |
 |---|---|---|
