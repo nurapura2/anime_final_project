@@ -23,6 +23,14 @@ This repository contains the final project for the Data Analysis course. Our tea
 
 The goal is to analyze trends in the anime industry — popularity by genre, release formats, age ratings, and more — using a full data analytics stack from raw web extraction to interactive BI dashboards.
 
+<br>
+
+<a href="#-project-overview"><kbd> <br> Project Overview <br> </kbd></a>&ensp;&ensp;
+<a href="#-technology-stack"><kbd> <br> Tech Stack <br> </kbd></a>&ensp;&ensp;
+<a href="#-pipeline-stages"><kbd> <br> Pipeline Stages <br> </kbd></a>&ensp;&ensp;
+<a href="#-installation--setup"><kbd> <br> Installation <br> </kbd></a>
+
+<br>
 ---
 
 ## 📸 Screenshots
