@@ -24,21 +24,36 @@ The goal is to analyze trends in the anime industry — popularity by genre, rel
 ---
 
 ## 📸 Screenshots
+#### Site
+<img width="2530" height="1323" alt="image" src="https://github.com/user-attachments/assets/ac3729b7-9f01-47be-9510-537ee46a938a" />
+#### Catalog
+<img width="2536" height="1245" alt="image" src="https://github.com/user-attachments/assets/1741678e-2dfd-47fe-a98d-0625b5c65425" />
+#### Anime Card
+<img width="2543" height="1324" alt="image" src="https://github.com/user-attachments/assets/66d24bbc-2f1c-4150-b4e4-cded4595bd93" />
+
+
 
 ### Web Scraping in Action
-<!-- TODO: Add screenshot of scraper running / raw CSV output -->
-> *Screenshot coming soon*
+#### Anime links сollecting
+<img width="932" height="816" alt="image" src="https://github.com/user-attachments/assets/53e87ed2-5840-48a3-a621-41330c444b41" />
+#### Estimated scraping time
+<img width="445" height="155" alt="image" src="https://github.com/user-attachments/assets/7bb61e9d-a1b3-449c-afad-07ddf7edf395" />
+#### Anime entries scraping
+<img width="1372" height="808" alt="image" src="https://github.com/user-attachments/assets/62adc577-7c0c-4a4a-87e1-660c5ad8c436" />
+#### Saving
+<img width="495" height="101" alt="image" src="https://github.com/user-attachments/assets/4e632cf7-1e5c-4904-b89c-bddba5c8b909" />
+
+
 
 ### Database Schema
-<!-- TODO: Add ER diagram or DB browser screenshot -->
-> *Screenshot coming soon*
+<img width="2347" height="1291" alt="image" src="https://github.com/user-attachments/assets/c3449b3d-124c-4ce3-b756-1e6d194fcdaa" />
+
 
 ### Google Sheets Export
-<!-- TODO: Add screenshot of the populated Google Sheet -->
-> *Screenshot coming soon*
+<img width="2547" height="1223" alt="image" src="https://github.com/user-attachments/assets/e079d838-764c-43b7-893f-13248151c32f" />
 
 ### Looker Studio Dashboard
-<!-- TODO: Add screenshot of the dashboard -->
+
 > *Screenshot coming soon*
 
 ---
@@ -54,7 +69,7 @@ We collected a dataset of **10,142 records** containing the following attributes
 | `anime_type` | Release format | TV Series, Movie, OVA, ONA |
 | `status` | Current release status | Released, Ongoing, Announced |
 | `release_year` | Year of broadcast | 2003 |
-| `age_rating` | Recommended audience age | 16+, 18+, PG |
+| `age_rating` | Recommended audience age | R-17+, G, PG |
 | `source` | Source material | Manga, Light Novel, Original |
 | `site_rating` | User score on the platform | 8.4 |
 | `site_votes` | Number of user votes | 12400 |
@@ -84,7 +99,7 @@ We collected a dataset of **10,142 records** containing the following attributes
 - Extracts raw HTML using `requests`, parsed with `BeautifulSoup4`
 - Handles pagination across all catalog pages
 - Error handling for missing fields, timeouts, and failed requests
-- Collects 10,142 records across 26 attributes
+- Collects 10,159 records across 26 attributes
 - Output → `data/raw/anime_catalog.csv`
 
 ### 2. 🧹 Data Preprocessing — `src/etl/transform.py`
