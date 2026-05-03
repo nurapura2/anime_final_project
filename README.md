@@ -35,7 +35,7 @@ The goal is to analyze trends in the anime industry — popularity by genre, rel
 <br>
 ---
 
-##<a name="screenshots"></a> 📸 Screenshots
+## <a name="screenshots"></a> 📸 Screenshots
 #### Site
 <img width="2530" height="1323" alt="image" src="https://github.com/user-attachments/assets/ac3729b7-9f01-47be-9510-537ee46a938a" />
 #### Catalog
