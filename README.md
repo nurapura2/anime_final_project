@@ -252,7 +252,7 @@ LIMIT 10;
 ### 5. ☁️ Export & Visualization — `src/dashboard/`
 
 - Cleaned data exported to **Google Sheets** via Google Sheets API
-- **[📊 Google Sheets — Dataset](https://docs.google.com/spreadsheets/d/1wE2jzDtm50-0H0qlcDM1NiB9CExufcMk3x1ylPXYleY/edit?usp=sharing)**
+- **[📊 Google Sheets - Dataset](https://docs.google.com/spreadsheets/d/1wE2jzDtm50-0H0qlcDM1NiB9CExufcMk3x1ylPXYleY/edit?usp=sharing)**
 - Interactive dashboard built in **Looker Studio** with bar charts, line charts, pie charts, and filter controls
 - **[📈 Looker Studio Dashboard](#)** *(link coming soon)*
 

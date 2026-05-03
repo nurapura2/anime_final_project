@@ -28,7 +28,7 @@ def clean_anime_catalog(input_path: str, output_path: str) -> pd.DataFrame:
     df = df.drop(columns=['kinopoisk_rating', 'kinopoisk_url'])
 
     # Data Types & Format 
-    df['site_views'] = df['site_views'].str.extract(r'(\d+)').astype(int)
+    df['site_views'] = df['site_views'].str.replace(' ', '', regex=False).str.extract(r'(\d+)').astype(int)
 
     # Split multi-value columns into lists
     for col in ['genres', 'alt_names', 'studio', 'director', 'dubbing']:
