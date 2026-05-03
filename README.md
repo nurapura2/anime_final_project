@@ -24,11 +24,19 @@ The goal is to analyze trends in the anime industry — popularity by genre, rel
 ---
 
 ## 📸 Screenshots
+<img width="2530" height="1323" alt="image" src="https://github.com/user-attachments/assets/ac3729b7-9f01-47be-9510-537ee46a938a" />
+<img width="2536" height="1245" alt="image" src="https://github.com/user-attachments/assets/1741678e-2dfd-47fe-a98d-0625b5c65425" />
+
+
 
 ### Web Scraping in Action
 <img width="932" height="816" alt="image" src="https://github.com/user-attachments/assets/53e87ed2-5840-48a3-a621-41330c444b41" />
 
 <img width="445" height="155" alt="image" src="https://github.com/user-attachments/assets/7bb61e9d-a1b3-449c-afad-07ddf7edf395" />
+
+<img width="1372" height="808" alt="image" src="https://github.com/user-attachments/assets/62adc577-7c0c-4a4a-87e1-660c5ad8c436" />
+
+<img width="495" height="101" alt="image" src="https://github.com/user-attachments/assets/4e632cf7-1e5c-4904-b89c-bddba5c8b909" />
 
 
 
@@ -37,7 +45,7 @@ The goal is to analyze trends in the anime industry — popularity by genre, rel
 
 
 ### Google Sheets Export
-<img width="2524" height="1143" alt="image" src="https://github.com/user-attachments/assets/6a401b19-39e2-45fd-9742-b7aa323ba9a3" />
+<img width="2559" height="1262" alt="image" src="https://github.com/user-attachments/assets/d6dadeeb-c836-486d-a597-cbacb673987c" />
 
 ### Looker Studio Dashboard
 
