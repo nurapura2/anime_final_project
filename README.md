@@ -42,8 +42,10 @@ The goal is to analyze trends in the anime industry — popularity by genre, rel
 
 #### Site
 <img width="2530" height="1323" alt="image" src="https://github.com/user-attachments/assets/ac3729b7-9f01-47be-9510-537ee46a938a" />
+
 #### Catalog
 <img width="2536" height="1245" alt="image" src="https://github.com/user-attachments/assets/1741678e-2dfd-47fe-a98d-0625b5c65425" />
+
 #### Anime Card
 <img width="2543" height="1324" alt="image" src="https://github.com/user-attachments/assets/66d24bbc-2f1c-4150-b4e4-cded4595bd93" />
 
@@ -52,10 +54,13 @@ The goal is to analyze trends in the anime industry — popularity by genre, rel
 ### Web Scraping in Action
 #### Anime links сollecting
 <img width="932" height="816" alt="image" src="https://github.com/user-attachments/assets/53e87ed2-5840-48a3-a621-41330c444b41" />
+
 #### Estimated scraping time
 <img width="445" height="155" alt="image" src="https://github.com/user-attachments/assets/7bb61e9d-a1b3-449c-afad-07ddf7edf395" />
+
 #### Anime entries scraping
 <img width="1372" height="808" alt="image" src="https://github.com/user-attachments/assets/62adc577-7c0c-4a4a-87e1-660c5ad8c436" />
+
 #### Saving
 <img width="495" height="101" alt="image" src="https://github.com/user-attachments/assets/4e632cf7-1e5c-4904-b89c-bddba5c8b909" />
 
