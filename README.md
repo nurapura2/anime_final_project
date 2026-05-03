@@ -358,6 +358,6 @@ LIMIT 10;
 
 | Name | Role |
 |---|---|
-| <Nurassyl> | Web Scraping & ETL |
-| <Nurbolat> | Database & SQL Analysis |
-| <Niyazbek> | Dashboard & Visualization |
+| Nurassyl | Web Scraping & ETL |
+| Nurbolat | Database & SQL Analysis |
+| Niyazbek | Dashboard & Visualization |
