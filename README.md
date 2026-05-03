@@ -15,7 +15,7 @@ An End-to-End Data Pipeline to scrape, clean, store, analyze, and visualize anim
 
 </div>
 
-## 📌 Project Overview
+## <a name="project_overview"></a>  📌 Project Overview
 
 This repository contains the final project for the Data Analysis course. Our team built an End-to-End Data Pipeline to scrape, clean, store, analyze, and visualize anime data from [yummyani.me](https://yummyani.me).
 
@@ -88,6 +88,10 @@ We collected a dataset of **10,159 records** containing the following attributes
 | `studios` | Production studios | Bones, Madhouse |
 | `directors` | Directors of the anime | Shinichiro Watanabe |
 | `dubbing_groups` | Russian dubbing groups | AniLibria, 2x2 |
+
+<br>
+<a href="#project_overview"><kbd> <br> Screenshots <br> </kbd></a>&ensp;&ensp;
+<br>
 
 ---
 
