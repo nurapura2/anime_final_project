@@ -2,6 +2,8 @@
 
 <div align="center">
 
+<img width="1376" height="768" alt="Gemini_Generated_Image_klqp8zklqp8zklqp" src="https://github.com/user-attachments/assets/7fbb1826-ae74-4777-895d-5fb8fd9ac5f8" />
+
 An End-to-End Data Pipeline to scrape, clean, store, analyze, and visualize anime data from [yummyani.me](https://yummyani.me).
 
 ![Python](https://img.shields.io/badge/Python-3.9+-blue?style=flat-square&logo=python&logoColor=white)
