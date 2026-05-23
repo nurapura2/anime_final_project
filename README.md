@@ -74,7 +74,8 @@ The goal is to analyze trends in the anime industry — popularity by genre, rel
 
 ### Looker Studio Dashboard
 
-> *Screenshot coming soon*
+<img width="2085" height="1315" alt="изображение" src="https://github.com/user-attachments/assets/e5019645-802e-44cf-bfd1-34f8053c3006" />
+<img width="2080" height="1250" alt="изображение" src="https://github.com/user-attachments/assets/ff352a74-13ab-447d-b51a-f38639983261" />
 
 ---
 
